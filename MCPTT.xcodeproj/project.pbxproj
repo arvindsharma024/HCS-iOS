@@ -80,6 +80,7 @@
 		5613CF67216CC664006DC121 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5613CF60216CC664006DC121 /* ContactsViewModel.swift */; };
 		5613CF6A216CC93B006DC121 /* ContactSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5613CF68216CC93B006DC121 /* ContactSearchModel.swift */; };
 		5613CF6B216CC93B006DC121 /* contactslist.json in Resources */ = {isa = PBXBuildFile; fileRef = 5613CF69216CC93B006DC121 /* contactslist.json */; };
+		A766B535216E14F700109F4C /* ChannelListProtocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A766B534216E14F700109F4C /* ChannelListProtocal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +180,7 @@
 		5613CF60216CC664006DC121 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		5613CF68216CC93B006DC121 /* ContactSearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactSearchModel.swift; sourceTree = "<group>"; };
 		5613CF69216CC93B006DC121 /* contactslist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contactslist.json; sourceTree = "<group>"; };
+		A766B534216E14F700109F4C /* ChannelListProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListProtocal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +361,7 @@
 				0A0B1D04216CAA68007A0FD8 /* channelCell.swift */,
 				0A0B1D00216CAA68007A0FD8 /* ChannelCell.xib */,
 				0A0B1D05216CAA68007A0FD8 /* SectionHeaderView.xib */,
+				A766B534216E14F700109F4C /* ChannelListProtocal.swift */,
 			);
 			path = ChannelList;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				0A0B1D5D216CAA69007A0FD8 /* GroupsListNewController.swift in Sources */,
 				0A0B1D5B216CAA69007A0FD8 /* ContactHeaderCell.swift in Sources */,
 				0A0B1D4F216CAA69007A0FD8 /* ContactSearchViewController.swift in Sources */,
+				A766B535216E14F700109F4C /* ChannelListProtocal.swift in Sources */,
 				0A0B1D58216CAA69007A0FD8 /* GroupMembersCell.swift in Sources */,
 				0A0B1D7F216CAA69007A0FD8 /* SettingsViewController.swift in Sources */,
 				0A0B1D8B216CAA69007A0FD8 /* ContactDatabaseHelper.swift in Sources */,

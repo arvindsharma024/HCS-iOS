@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-final class ContactListViewController : UIViewController, UICollectionViewDelegateFlowLayout{
+final class ContactListViewController : UIViewController, UICollectionViewDelegateFlowLayout, ChannelListDelegate {
+    
     var userName = "Jeanette McHale"
     var userEmail = "MCID"
     //var groups = ["Special TF A(999)"]
-    var groups:[String] = ["_team name_(10)","_team name_(21)","_team name_(7)","_team name_(14)","_team name_(87)","_team name_(75)","_team name_(25)","_team name_(13)"]
+    var groups: [String] = ["_team name_(10)","_team name_(21)","_team name_(7)","_team name_(14)","_team name_(87)","_team name_(75)","_team name_(25)","_team name_(13)"]
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -32,9 +33,9 @@ final class ContactListViewController : UIViewController, UICollectionViewDelega
         collectionView?.delegate = self
         collectionView?.dataSource = self
         
-        collectionView?.register(UINib.init(nibName: "SectionHeaderView", bundle: nil), forSupplementaryViewOfKind:UICollectionElementKindSectionHeader , withReuseIdentifier: "Header")
+        collectionView?.register(UINib.init(nibName: "SectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
         
-        collectionView?.register(UINib.init(nibName: "ContactsMainCell", bundle: nil), forCellWithReuseIdentifier:"ContactsMainCell")
+        collectionView?.register(UINib.init(nibName: "ContactsMainCell", bundle: nil), forCellWithReuseIdentifier: "ContactsMainCell")
         //collectionView?.register(UINib.init(nibName: "ContactsGroupCell", bundle: nil), forCellWithReuseIdentifier:"ContactsGroupCell")
         
         let cellSize = CGSize(width: view.frame.width, height: 100)
@@ -59,6 +60,14 @@ final class ContactListViewController : UIViewController, UICollectionViewDelega
                 self?.collectionView.reloadData()
             }
         }
+    }
+    func launchConversationView() {
+        let channelStoryboard = UIStoryboard.init(name: "ConversationView", bundle: nil)
+        guard let conversationViewController = channelStoryboard.instantiateViewController(withIdentifier: "ConversationViewController") as? ConversationViewController else {
+            return
+        }
+        
+        self.parent?.navigationController?.pushViewController(conversationViewController, animated: true)
     }
 } //class ending
 
@@ -118,7 +127,7 @@ extension ContactListViewController: UICollectionViewDelegate, UICollectionViewD
             return CGSize(width: screenSize.width, height: 80)
         }
     }
-
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch (indexPath.section) {
@@ -151,6 +160,7 @@ extension ContactListViewController: UICollectionViewDelegate, UICollectionViewD
             cell.configureContactCell(contactMainCellVM: cellVM)
             
             cell.separatorLineLabel.isHidden = false
+            cell.delegate = self
             return cell
         }
     }

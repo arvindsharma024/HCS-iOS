@@ -13,17 +13,17 @@
         <!--Private group-->
         <scene sceneID="zsr-f3-7sW">
             <objects>
-                <viewController storyboardIdentifier="ConversationViewController" id="50N-ss-gYy" customClass="ConversationViewController" customModule="mcpttapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConversationViewController" id="50N-ss-gYy" customClass="ConversationViewController" customModule="MCPTT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpI-TB-1MW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fX9-PC-ndY">
-                                <rect key="frame" x="0.0" y="20" width="375" height="396"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="440"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="2RI-WV-SIx"/>
-                                    <constraint firstAttribute="height" constant="396" id="lG4-3n-zBj"/>
+                                    <constraint firstAttribute="height" constant="440" id="lG4-3n-zBj"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kWp-vM-O4m">
                                     <size key="itemSize" width="50" height="50"/>
@@ -34,7 +34,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMI-Ut-57S" userLabel="MessageView">
-                                <rect key="frame" x="0.0" y="416" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="460" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOl-ap-rJM">
                                         <rect key="frame" x="8" y="6" width="42" height="43"/>
@@ -86,7 +86,7 @@
                                 <rect key="frame" x="0.0" y="510" width="375" height="157"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-vo-wgX">
-                                        <rect key="frame" x="150" y="32" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="28" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="1Z8-HD-l2Z"/>
                                             <constraint firstAttribute="width" constant="100" id="S7q-CI-7N6"/>
@@ -112,13 +112,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="1nA-v6-pwO"/>
                                     <constraint firstItem="jUb-Pu-4lJ" firstAttribute="centerY" secondItem="jJf-me-htU" secondAttribute="centerY" id="Cfb-TA-ER1"/>
-                                    <constraint firstItem="7zp-vo-wgX" firstAttribute="centerY" secondItem="jJf-me-htU" secondAttribute="centerY" constant="3.5" id="J3a-nS-pf4"/>
+                                    <constraint firstItem="jUb-Pu-4lJ" firstAttribute="top" secondItem="jJf-me-htU" secondAttribute="top" constant="56" id="DAJ-qj-mmb"/>
                                     <constraint firstItem="jUb-Pu-4lJ" firstAttribute="leading" secondItem="jJf-me-htU" secondAttribute="leading" constant="36" id="Rcv-In-LsD"/>
-                                    <constraint firstItem="kZU-yn-zCo" firstAttribute="centerY" secondItem="jJf-me-htU" secondAttribute="centerY" id="Tw2-Vq-Raq"/>
                                     <constraint firstAttribute="trailing" secondItem="kZU-yn-zCo" secondAttribute="trailing" constant="27" id="ZNI-kp-dOi"/>
-                                    <constraint firstItem="kZU-yn-zCo" firstAttribute="leading" secondItem="7zp-vo-wgX" secondAttribute="trailing" constant="54" id="qRa-Gy-8bN"/>
-                                    <constraint firstItem="7zp-vo-wgX" firstAttribute="leading" secondItem="jUb-Pu-4lJ" secondAttribute="trailing" constant="70" id="uZ3-Cx-ueu"/>
+                                    <constraint firstItem="7zp-vo-wgX" firstAttribute="centerY" secondItem="jJf-me-htU" secondAttribute="centerY" id="ake-tk-aTH"/>
+                                    <constraint firstItem="kZU-yn-zCo" firstAttribute="top" secondItem="jJf-me-htU" secondAttribute="top" constant="56" id="eOd-St-B15"/>
+                                    <constraint firstItem="7zp-vo-wgX" firstAttribute="centerX" secondItem="jJf-me-htU" secondAttribute="centerX" id="kzf-am-8sA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -126,14 +127,14 @@
                         <constraints>
                             <constraint firstItem="nMI-Ut-57S" firstAttribute="trailing" secondItem="H3i-io-Pj6" secondAttribute="trailing" id="1cw-24-bFq"/>
                             <constraint firstItem="fX9-PC-ndY" firstAttribute="top" secondItem="H3i-io-Pj6" secondAttribute="top" id="BPk-KX-P12"/>
+                            <constraint firstItem="jJf-me-htU" firstAttribute="top" secondItem="nMI-Ut-57S" secondAttribute="bottom" id="GXa-pg-vaM"/>
                             <constraint firstItem="fX9-PC-ndY" firstAttribute="leading" secondItem="H3i-io-Pj6" secondAttribute="leading" id="HRF-EJ-hgX"/>
                             <constraint firstItem="nMI-Ut-57S" firstAttribute="leading" secondItem="H3i-io-Pj6" secondAttribute="leading" id="OVK-GN-R1C"/>
                             <constraint firstItem="fX9-PC-ndY" firstAttribute="trailing" secondItem="H3i-io-Pj6" secondAttribute="trailing" id="Pxf-zM-gPU"/>
                             <constraint firstItem="jJf-me-htU" firstAttribute="leading" secondItem="H3i-io-Pj6" secondAttribute="leading" id="bWV-2f-JL0"/>
-                            <constraint firstItem="jJf-me-htU" firstAttribute="top" secondItem="mpI-TB-1MW" secondAttribute="top" constant="510" id="dne-pG-Eff"/>
+                            <constraint firstItem="nMI-Ut-57S" firstAttribute="top" secondItem="fX9-PC-ndY" secondAttribute="bottom" id="eSh-H5-Tp6"/>
+                            <constraint firstAttribute="bottom" secondItem="jJf-me-htU" secondAttribute="bottom" id="hQb-4w-pvr"/>
                             <constraint firstItem="jJf-me-htU" firstAttribute="trailing" secondItem="H3i-io-Pj6" secondAttribute="trailing" id="kxw-eL-bJh"/>
-                            <constraint firstItem="jJf-me-htU" firstAttribute="bottom" secondItem="H3i-io-Pj6" secondAttribute="bottom" id="tZL-Fy-BCw"/>
-                            <constraint firstItem="nMI-Ut-57S" firstAttribute="top" secondItem="fX9-PC-ndY" secondAttribute="bottom" id="vjy-d6-mOA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H3i-io-Pj6"/>
                     </view>
@@ -143,6 +144,8 @@
                     <connections>
                         <outlet property="ChatCollectionView" destination="fX9-PC-ndY" id="WAH-08-VZh"/>
                         <outlet property="ChatCollectionViewHeightConst" destination="lG4-3n-zBj" id="V2m-Di-cjF"/>
+                        <outlet property="PTTView" destination="jJf-me-htU" id="8H4-Ve-whP"/>
+                        <outlet property="PTTViewHeightConst" destination="1nA-v6-pwO" id="IJB-O6-kW0"/>
                         <outlet property="messageText" destination="eNZ-YS-mx4" id="Dt7-tX-Iur"/>
                         <outlet property="messageView" destination="nMI-Ut-57S" id="9Aq-9i-4bz"/>
                         <outlet property="messageViewHightConst" destination="4WN-rl-5LO" id="YgI-c8-TpY"/>
