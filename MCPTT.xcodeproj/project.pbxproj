@@ -76,6 +76,12 @@
 		5FF8A4632170951000ADCFF1 /* GroupsListNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF8A4622170951000ADCFF1 /* GroupsListNewCell.swift */; };
 		A70FC1EA2170BF2800FEDF08 /* ChatAudioRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70FC1E92170BF2800FEDF08 /* ChatAudioRecordCell.swift */; };
 		A70FC1EC2170BF3300FEDF08 /* ChatAudioRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70FC1EB2170BF3300FEDF08 /* ChatAudioRecordCell.xib */; };
+		A78B41F82177550C00488093 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F12177550C00488093 /* MessageModel.swift */; };
+		A78B41F92177550C00488093 /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F32177550C00488093 /* TextMessage.swift */; };
+		A78B41FA2177550C00488093 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F42177550C00488093 /* Message.swift */; };
+		A78B41FB2177550C00488093 /* SessionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F52177550C00488093 /* SessionMessage.swift */; };
+		A78B41FC2177550C00488093 /* PttUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F62177550C00488093 /* PttUrl.swift */; };
+		A78B41FD2177550C00488093 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B41F72177550C00488093 /* NotificationModel.swift */; };
 		D0D9C1E22175D90A00E0B88F /* DatabaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C1E12175D90A00E0B88F /* DatabaseConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -172,6 +178,12 @@
 		5FF8A4622170951000ADCFF1 /* GroupsListNewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsListNewCell.swift; sourceTree = "<group>"; };
 		A70FC1E92170BF2800FEDF08 /* ChatAudioRecordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatAudioRecordCell.swift; sourceTree = "<group>"; };
 		A70FC1EB2170BF3300FEDF08 /* ChatAudioRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatAudioRecordCell.xib; sourceTree = "<group>"; };
+		A78B41F12177550C00488093 /* MessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		A78B41F32177550C00488093 /* TextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
+		A78B41F42177550C00488093 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A78B41F52177550C00488093 /* SessionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMessage.swift; sourceTree = "<group>"; };
+		A78B41F62177550C00488093 /* PttUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PttUrl.swift; sourceTree = "<group>"; };
+		A78B41F72177550C00488093 /* NotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D0D9C1E12175D90A00E0B88F /* DatabaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,6 +411,7 @@
 		0A0B1D37216CAA69007A0FD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A78B41F0217754EF00488093 /* Data */,
 				0A0B1D38216CAA69007A0FD8 /* Database */,
 				0A0B1D3A216CAA69007A0FD8 /* Cipher */,
 				0A0B1D3E216CAA69007A0FD8 /* Common */,
@@ -496,6 +509,27 @@
 				5FF8A430216E1CE700ADCFF1 /* contactslist.json */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		A78B41F0217754EF00488093 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A78B41F22177550C00488093 /* data */,
+				A78B41F12177550C00488093 /* MessageModel.swift */,
+				A78B41F72177550C00488093 /* NotificationModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A78B41F22177550C00488093 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				A78B41F32177550C00488093 /* TextMessage.swift */,
+				A78B41F42177550C00488093 /* Message.swift */,
+				A78B41F52177550C00488093 /* SessionMessage.swift */,
+				A78B41F62177550C00488093 /* PttUrl.swift */,
+			);
+			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,14 +712,19 @@
 				5613CF67216CC664006DC121 /* ContactsListViewModel.swift in Sources */,
 				5613CF65216CC664006DC121 /* ContactListViewController.swift in Sources */,
 				0A0B1D8C216CAA69007A0FD8 /* AES256Cipher.swift in Sources */,
+				A78B41FD2177550C00488093 /* NotificationModel.swift in Sources */,
 				5613CF58216CC3F8006DC121 /* LandingViewController.swift in Sources */,
+				A78B41F82177550C00488093 /* MessageModel.swift in Sources */,
 				0A0B1D85216CAA69007A0FD8 /* LoginViewContoller.swift in Sources */,
+				A78B41FA2177550C00488093 /* Message.swift in Sources */,
 				5613CF4F216CC360006DC121 /* ConversationViewModel.swift in Sources */,
 				5FF8A443216E1CE700ADCFF1 /* ContactSearchCell.swift in Sources */,
 				5613CF42216CC040006DC121 /* MemberListViewModel.swift in Sources */,
 				5FF8A43F216E1CE700ADCFF1 /* ContactSearchViewController.swift in Sources */,
+				A78B41FC2177550C00488093 /* PttUrl.swift in Sources */,
 				0A0B1D8D216CAA69007A0FD8 /* AESCipher.swift in Sources */,
 				5FF8A45D216F7C4000ADCFF1 /* PersonalCell.swift in Sources */,
+				A78B41F92177550C00488093 /* TextMessage.swift in Sources */,
 				0A0B1D83216CAA69007A0FD8 /* LoginViewModel.swift in Sources */,
 				5613CF53216CC360006DC121 /* ConversationViewController.swift in Sources */,
 				0A0B1D4C216CAA69007A0FD8 /* MemberDetailViewController.swift in Sources */,
@@ -706,6 +745,7 @@
 				5FF8A45F217074CA00ADCFF1 /* ContactListHeaderView.swift in Sources */,
 				5613CF36216CBF30006DC121 /* ChannelListViewModel.swift in Sources */,
 				5FF8A447216E1CE700ADCFF1 /* GroupsListMemberViewController.swift in Sources */,
+				A78B41FB2177550C00488093 /* SessionMessage.swift in Sources */,
 				5FF8A44F216E6F4A00ADCFF1 /* GroupsListMemberModel.swift in Sources */,
 				0A0B1D66216CAA69007A0FD8 /* channelCell.swift in Sources */,
 				0A0B1D88216CAA69007A0FD8 /* ChannelExtension.swift in Sources */,
