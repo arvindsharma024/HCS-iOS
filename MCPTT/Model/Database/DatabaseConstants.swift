@@ -9,6 +9,7 @@
 import Foundation
 
 //  Local Database
+
 enum LocalDBTables {
    static let MESSAGE_DATABASE_TABLE = "message_db_table"
    static let RECENT_LOG_DATABASE_TABLE = "recent_log_db_table"
@@ -34,9 +35,6 @@ enum  MessageColumns {
     static let MESSAGE_CALL_TYPE = "call_type" //ModelConstants.CallType
     static let MESSAGE_TYPE = "type"   //Message.Type
 }
-
-//Create message db table
-let createMessageDatabaseTable = "\(LocalDBTables.MESSAGE_DATABASE_TABLE) ( \(MessageColumns.MESSAGE_ID_ENTRY) INTEGER PRIMARY KEY AUTOINCREMENT, \(MessageColumns.MESSAGE_USER_URI) TEXT,\(MessageColumns.MESSAGE_CHANNEL_URI_ENTRY) TEXT, \(MessageColumns.MESSAGE_SESSION_ID_ENTRY) INTEGER,\(MessageColumns.MESSAGE_SENDER_URI_ENTRY) TEXT,\(MessageColumns.MESSAGE_START_TIME) INTEGER, \(MessageColumns.MESSAGE_END_TIME) INTEGER,\(MessageColumns.MESSAGE_IM_BODY_ENTRY) TEXT,\(MessageColumns.MESSAGE_IS_SITUATION_ENTRY) INTEGER,\(MessageColumns.MESSAGE_FT_THUMBNAIL_KEY_ENTRY) TEXT,\(MessageColumns.MESSAGE_FT_URI_ENTRY) TEXT, \(MessageColumns.MESSAGE_FT_STATE_ENTRY) INTEGER, \( MessageColumns.MESSAGE_FT_AUDIO_DURATION_ENTRY) TEXT, \(MessageColumns.MESSAGE_TYPE) INTEGER, \(MessageColumns.MESSAGE_IS_READ_ENTRY) INTEGER, \(MessageColumns.MESSAGE_CALL_TYPE), INTEGER, \(MessageColumns.MESSAGE_CALL_PRIORITY)INTEGER, \( MessageColumns.MESSAGE_IS_SENT_ENTRY)INTEGER )"
 
 enum ContactsDBTables {
     static let CONTACTS = "contacts"
@@ -171,27 +169,33 @@ enum ContactRelationColumns {
     static let GROUP_ID = "group_id"
 }
 
-// Create contact db table
-let createContactTable = "\(ContactsDBTables.CONTACTS)( \(ContactsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT,\(ContactsColumns.URI) TEXT, \(ContactsColumns.USER_ID) TEXT, \(ContactsColumns.DISPLAY_NAME) TEXT,\(ContactsColumns.EMAIL) TEXT,\(ContactsColumns.ON_REQUIRED)INTEGER, \(ContactsColumns.USER_PRIORITY) INTEGER,\(ContactsColumns.OFF_USER_INFO_ID)TEXT,\(ContactsColumns.PARTICIPANT_TYPE) TEXT,\(ContactsColumns.ON_RECVONLY) INTEGER,\(ContactsColumns.ORGANIZATION) TEXT, \(ContactsColumns.GROUP_INFO) TEXT, \(ContactsColumns.IS_PROFILE) INTEGER, \(ContactsColumns.SEARCH_KEY) TEXT, \(ContactsColumns.LIST_LABEL) TEXT, \(ContactsColumns.TYPE) TEXT )"
+class DatabaseConstants {
+    //Create message db table
+    static let createMessageDatabaseTable = "\(LocalDBTables.MESSAGE_DATABASE_TABLE) ( \(MessageColumns.MESSAGE_ID_ENTRY) INTEGER PRIMARY KEY AUTOINCREMENT, \(MessageColumns.MESSAGE_USER_URI) TEXT,\(MessageColumns.MESSAGE_CHANNEL_URI_ENTRY) TEXT, \(MessageColumns.MESSAGE_SESSION_ID_ENTRY) INTEGER,\(MessageColumns.MESSAGE_SENDER_URI_ENTRY) TEXT,\(MessageColumns.MESSAGE_START_TIME) INTEGER, \(MessageColumns.MESSAGE_END_TIME) INTEGER,\(MessageColumns.MESSAGE_IM_BODY_ENTRY) TEXT,\(MessageColumns.MESSAGE_IS_SITUATION_ENTRY) INTEGER,\(MessageColumns.MESSAGE_FT_THUMBNAIL_KEY_ENTRY) TEXT,\(MessageColumns.MESSAGE_FT_URI_ENTRY) TEXT, \(MessageColumns.MESSAGE_FT_STATE_ENTRY) INTEGER, \( MessageColumns.MESSAGE_FT_AUDIO_DURATION_ENTRY) TEXT, \(MessageColumns.MESSAGE_TYPE) INTEGER, \(MessageColumns.MESSAGE_IS_READ_ENTRY) INTEGER, \(MessageColumns.MESSAGE_CALL_TYPE), INTEGER, \(MessageColumns.MESSAGE_CALL_PRIORITY)INTEGER, \( MessageColumns.MESSAGE_IS_SENT_ENTRY)INTEGER )"
 
-//  Create group table
-let createGroupTable = "\(ContactsDBTables.GROUPS) ( \(GroupsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(GroupsColumns.URI) TEXT, \(GroupsColumns.GROUP_ID) TEXT,\(GroupsColumns.DISPLAY_NAME) TEXT, \(GroupsColumns.ON_INVITE_MEMBERS) INTEGER, \(GroupsColumns.ON_MAX_PARTICIPANT) INTEGER, \(GroupsColumns.ALLOW_EMERGENCY_CALL) INTEGER, \(GroupsColumns.ALLOW_IMMINENT_CALL) INTEGER,\(GroupsColumns.ALLOW_EMERGENCY_ALERT) INTEGER, \(GroupsColumns.ON_ALLOW_GET_MEMBER_LIST) INTEGER, \(GroupsColumns.ON_ALLOW_GET_AFFILIATION_LIST) INTEGER, \(GroupsColumns.ON_DISABLED) INTEGER , \(GroupsColumns.ON_NETWORK_GROUP_PRIORITY) INTEGER, \(GroupsColumns.OFF_PROSE_LAYER2_GROUP_ID) TEXT, \(GroupsColumns.OFF_IP_MULTICAST_ADDRESS) TEXT , \(GroupsColumns.OFF_PDN_TYPE) TEXT,\(GroupsColumns.OFF_PROSE_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_EMERGENCY_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_IMMINENT_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_EMERGENCY_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_IMMINENT_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_RELAY_SERVICE_CODE) TEXT, \(GroupsColumns.OWNER) TEXT, \(GroupsColumns.LEVEL_WI_GROUP_HIERARCHY) INTEGER, \(GroupsColumns.LEVEL_WI_USER_HIERARCHY) INTEGER, \(GroupsColumns.ON_PROGRESS_EMERGENCY_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.ON_PROGRESS_IMMINENT_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.OFF_PROGRESS_EMERGENCY_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.OFF_PROGRESS_IMMINENT_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.ON_HANG_TIMER) INTEGER, \(GroupsColumns.ON_MAX_DURATION) INTEGER, \(GroupsColumns.OFF_HANG_TIMER) INTEGER, \(GroupsColumns.OFF_MAX_DURATION) INTEGER, \(GroupsColumns.ON_MIN_NUM_START) INTEGER, \(GroupsColumns.ON_TIMEOUT_ACK_REQ_MEMBER) INTEGER, \(GroupsColumns.ON_ACTION_EXP_TIMEOUT_ACK_REQ_MEMBER) INTEGER, \(GroupsColumns.GROUP_KEY_TRANSPORT_PAYLOAD) TEXT, \(GroupsColumns.PROTECT_MEDIA) TEXT, \(GroupsColumns.PROTECT_FLOOR_CONTROL_SIG) TEXT, \(GroupsColumns.REQUIRE_MULTICAST_FLOOR_CONTROL_SIG) TEXT, \(GroupsColumns.ON_ACK_CALL_AREA) INTEGER,\(GroupsColumns.ON_PREEMPTION_CAPA) TEXT, \(GroupsColumns.ON_PREEMPTED_CAPA) TEXT, \(GroupsColumns.ON_GROUP_FLOOR_CONTROL_SECURITY) TEXT, \(GroupsColumns.MBMS_SERVICE_AREA) INTEGER, \(GroupsColumns.RECORDER_USER_ID) TEXT, \( GroupsColumns.MEMBER_COUNT) TEXT, \(GroupsColumns.PROFILE_USER_PRIORITY) INTEGER, \(GroupsColumns.MCPTT_EMERGENCY_GROUP) INTEGER, \(GroupsColumns.SEARCH_KEY) TEXT, \(GroupsColumns.GROUP_ETAG) TEXT, \(GroupsColumns.ALLOW_MODIFY) INTEGER, \(GroupsColumns.TYPE) TEXT )"
+    // Create contact db table
+    static let createContactTable = "\(ContactsDBTables.CONTACTS)( \(ContactsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT,\(ContactsColumns.URI) TEXT, \(ContactsColumns.USER_ID) TEXT, \(ContactsColumns.DISPLAY_NAME) TEXT,\(ContactsColumns.EMAIL) TEXT,\(ContactsColumns.ON_REQUIRED)INTEGER, \(ContactsColumns.USER_PRIORITY) INTEGER,\(ContactsColumns.OFF_USER_INFO_ID)TEXT,\(ContactsColumns.PARTICIPANT_TYPE) TEXT,\(ContactsColumns.ON_RECVONLY) INTEGER,\(ContactsColumns.ORGANIZATION) TEXT, \(ContactsColumns.GROUP_INFO) TEXT, \(ContactsColumns.IS_PROFILE) INTEGER, \(ContactsColumns.SEARCH_KEY) TEXT, \(ContactsColumns.LIST_LABEL) TEXT, \(ContactsColumns.TYPE) TEXT )"
 
-//  Create contact relation table
-let createContactRelationTable = "\(ContactsDBTables.CONTACT_RELATION) ( \(ContactRelationColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(ContactRelationColumns.CONTACT_ID) INTEGER, \(ContactRelationColumns.GROUP_ID) INTEGER )"
+    //  Create group table
+    static let createGroupTable = "\(ContactsDBTables.GROUPS) ( \(GroupsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(GroupsColumns.URI) TEXT, \(GroupsColumns.GROUP_ID) TEXT,\(GroupsColumns.DISPLAY_NAME) TEXT, \(GroupsColumns.ON_INVITE_MEMBERS) INTEGER, \(GroupsColumns.ON_MAX_PARTICIPANT) INTEGER, \(GroupsColumns.ALLOW_EMERGENCY_CALL) INTEGER, \(GroupsColumns.ALLOW_IMMINENT_CALL) INTEGER,\(GroupsColumns.ALLOW_EMERGENCY_ALERT) INTEGER, \(GroupsColumns.ON_ALLOW_GET_MEMBER_LIST) INTEGER, \(GroupsColumns.ON_ALLOW_GET_AFFILIATION_LIST) INTEGER, \(GroupsColumns.ON_DISABLED) INTEGER , \(GroupsColumns.ON_NETWORK_GROUP_PRIORITY) INTEGER, \(GroupsColumns.OFF_PROSE_LAYER2_GROUP_ID) TEXT, \(GroupsColumns.OFF_IP_MULTICAST_ADDRESS) TEXT , \(GroupsColumns.OFF_PDN_TYPE) TEXT,\(GroupsColumns.OFF_PROSE_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_EMERGENCY_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_IMMINENT_SIG_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_EMERGENCY_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_IMMINENT_MEDIA_PPPP) INTEGER, \(GroupsColumns.OFF_PROSE_RELAY_SERVICE_CODE) TEXT, \(GroupsColumns.OWNER) TEXT, \(GroupsColumns.LEVEL_WI_GROUP_HIERARCHY) INTEGER, \(GroupsColumns.LEVEL_WI_USER_HIERARCHY) INTEGER, \(GroupsColumns.ON_PROGRESS_EMERGENCY_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.ON_PROGRESS_IMMINENT_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.OFF_PROGRESS_EMERGENCY_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.OFF_PROGRESS_IMMINENT_CANCEL_TIMEOUT) INTEGER, \(GroupsColumns.ON_HANG_TIMER) INTEGER, \(GroupsColumns.ON_MAX_DURATION) INTEGER, \(GroupsColumns.OFF_HANG_TIMER) INTEGER, \(GroupsColumns.OFF_MAX_DURATION) INTEGER, \(GroupsColumns.ON_MIN_NUM_START) INTEGER, \(GroupsColumns.ON_TIMEOUT_ACK_REQ_MEMBER) INTEGER, \(GroupsColumns.ON_ACTION_EXP_TIMEOUT_ACK_REQ_MEMBER) INTEGER, \(GroupsColumns.GROUP_KEY_TRANSPORT_PAYLOAD) TEXT, \(GroupsColumns.PROTECT_MEDIA) TEXT, \(GroupsColumns.PROTECT_FLOOR_CONTROL_SIG) TEXT, \(GroupsColumns.REQUIRE_MULTICAST_FLOOR_CONTROL_SIG) TEXT, \(GroupsColumns.ON_ACK_CALL_AREA) INTEGER,\(GroupsColumns.ON_PREEMPTION_CAPA) TEXT, \(GroupsColumns.ON_PREEMPTED_CAPA) TEXT, \(GroupsColumns.ON_GROUP_FLOOR_CONTROL_SECURITY) TEXT, \(GroupsColumns.MBMS_SERVICE_AREA) INTEGER, \(GroupsColumns.RECORDER_USER_ID) TEXT, \( GroupsColumns.MEMBER_COUNT) TEXT, \(GroupsColumns.PROFILE_USER_PRIORITY) INTEGER, \(GroupsColumns.MCPTT_EMERGENCY_GROUP) INTEGER, \(GroupsColumns.SEARCH_KEY) TEXT, \(GroupsColumns.GROUP_ETAG) TEXT, \(GroupsColumns.ALLOW_MODIFY) INTEGER, \(GroupsColumns.TYPE) TEXT )"
 
-// Create data table
-let createDataTable = "\(ContactsDBTables.DATA) ( \(DataColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(DataColumns.GROUP_ID) TEXT, \(DataColumns.CONTACT_ID) INTEGER, \(DataColumns.DATATYPE) TEXT, \(DataColumns.DATA1) TEXT, \(DataColumns.DATA2) TEXT,\(DataColumns.DATA3) TEXT,\(DataColumns.DATA4) TEXT,\(DataColumns.DATA5) TEXT,\(DataColumns.DATA6) TEXT,\(DataColumns.DATA7) TEXT,\(DataColumns.DATA8) TEXT,\(DataColumns.DATA9) TEXT,\(DataColumns.DATA10) TEXT,\(DataColumns.DATA11) TEXT,\(DataColumns.DATA12) TEXT,\(DataColumns.DATA13) TEXT,\(DataColumns.DATA14) TEXT,\(DataColumns.DATA15) TEXT)"
+    //  Create contact relation table
+    static let createContactRelationTable = "\(ContactsDBTables.CONTACT_RELATION) ( \(ContactRelationColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(ContactRelationColumns.CONTACT_ID) INTEGER, \(ContactRelationColumns.GROUP_ID) INTEGER )"
 
-// Create GKTP table
-let createGKTPTable = "\(ContactsDBTables.GKTP) ( \(GKTPColumns.GROUP_ID) TEXT, \(GKTPColumns.SEL) TEXT, \(GKTPColumns.TYPE) TEXT, \(GKTPColumns.GKTP_ID) TEXT, \(GKTPColumns.GKTP_VALUE) TEXT)"
+    // Create data table
+    static let createDataTable = "\(ContactsDBTables.DATA) ( \(DataColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(DataColumns.GROUP_ID) TEXT, \(DataColumns.CONTACT_ID) INTEGER, \(DataColumns.DATATYPE) TEXT, \(DataColumns.DATA1) TEXT, \(DataColumns.DATA2) TEXT,\(DataColumns.DATA3) TEXT,\(DataColumns.DATA4) TEXT,\(DataColumns.DATA5) TEXT,\(DataColumns.DATA6) TEXT,\(DataColumns.DATA7) TEXT,\(DataColumns.DATA8) TEXT,\(DataColumns.DATA9) TEXT,\(DataColumns.DATA10) TEXT,\(DataColumns.DATA11) TEXT,\(DataColumns.DATA12) TEXT,\(DataColumns.DATA13) TEXT,\(DataColumns.DATA14) TEXT,\(DataColumns.DATA15) TEXT)"
 
-// Create Adhoc table
-let createAdhocTable = "\(ContactsDBTables.ADHOCGROUPS) ( \(AdhocGroupsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(AdhocGroupsColumns.URI)  TEXT, \(AdhocGroupsColumns.DISPLAY_NAME)  TEXT, \(AdhocGroupsColumns.ALLOW_MODIFY)  INTEGER, \(AdhocGroupsColumns.MEMBER_URIS)  TEXT )"
+    // Create GKTP table
+    static let createGKTPTable = "\(ContactsDBTables.GKTP) ( \(GKTPColumns.GROUP_ID) TEXT, \(GKTPColumns.SEL) TEXT, \(GKTPColumns.TYPE) TEXT, \(GKTPColumns.GKTP_ID) TEXT, \(GKTPColumns.GKTP_VALUE) TEXT)"
 
-// TBD: Need confirmation on it before porting it in swift
-//public interface ContactTablesUris {
-//    Uri CONTACTS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts");
-//    Uri CONTACTS_CONTACTS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts/contacts");
-//    Uri CONTACTS_GROUPS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts/groups");
-//}
+    // Create Adhoc table
+    static let createAdhocTable = "\(ContactsDBTables.ADHOCGROUPS) ( \(AdhocGroupsColumns.ID) INTEGER PRIMARY KEY AUTOINCREMENT, \(AdhocGroupsColumns.URI)  TEXT, \(AdhocGroupsColumns.DISPLAY_NAME)  TEXT, \(AdhocGroupsColumns.ALLOW_MODIFY)  INTEGER, \(AdhocGroupsColumns.MEMBER_URIS)  TEXT )"
+
+    // TBD: Need confirmation on it before porting it in swift
+    //public interface ContactTablesUris {
+    //    Uri CONTACTS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts");
+    //    Uri CONTACTS_CONTACTS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts/contacts");
+    //    Uri CONTACTS_GROUPS_CONTENT_URI = Uri.parse("content://com.samsung.android.sptt.contacts/groups");
+    //}
+
+}

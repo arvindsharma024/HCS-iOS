@@ -92,6 +92,7 @@
 		A7A6A0252178543400EAAAD4 /* SessionMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6A01F2178543400EAAAD4 /* SessionMessage.swift */; };
 		A7A6A0262178543400EAAAD4 /* PttUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6A0202178543400EAAAD4 /* PttUrl.swift */; };
 		D0D9C1E22175D90A00E0B88F /* DatabaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9C1E12175D90A00E0B88F /* DatabaseConstants.swift */; };
+		D0F1F3242178671800414108 /* LocalDatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1F3232178671800414108 /* LocalDatabaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,7 @@
 		A7A6A01F2178543400EAAAD4 /* SessionMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMessage.swift; sourceTree = "<group>"; };
 		A7A6A0202178543400EAAAD4 /* PttUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PttUrl.swift; sourceTree = "<group>"; };
 		D0D9C1E12175D90A00E0B88F /* DatabaseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseConstants.swift; sourceTree = "<group>"; };
+		D0F1F3232178671800414108 /* LocalDatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalDatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,6 +444,7 @@
 		0A0B1D38216CAA69007A0FD8 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				D0F1F3232178671800414108 /* LocalDatabaseHelper.swift */,
 				D0D9C1E12175D90A00E0B88F /* DatabaseConstants.swift */,
 				0A0B1D39216CAA69007A0FD8 /* ContactDatabaseHelper.swift */,
 				6202EE9A217880BF000F2E3F /* DatabaseController.swift */,
@@ -757,6 +760,7 @@
 				0A0B1D61216CAA69007A0FD8 /* SectionHeaderCell.swift in Sources */,
 				4D51CE7C2175E40B0084CDBA /* FloorSession.swift in Sources */,
 				4D51CE782175BB4B0084CDBA /* PTTUri.swift in Sources */,
+				D0F1F3242178671800414108 /* LocalDatabaseHelper.swift in Sources */,
 				4D51CE7A2175E2930084CDBA /* MediaInfo.swift in Sources */,
 				5613CF67216CC664006DC121 /* ContactsListViewModel.swift in Sources */,
 				5613CF65216CC664006DC121 /* ContactListViewController.swift in Sources */,
