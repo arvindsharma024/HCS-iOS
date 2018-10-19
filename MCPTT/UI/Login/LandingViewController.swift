@@ -49,7 +49,7 @@ class LandingViewController: UIViewController {
         
         let settingImage = UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysTemplate)
         let settingButton = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(handleSettings))
-        settingButton.tintColor = UIColor.black
+        settingButton.tintColor = .gray
         
         navigationItem.rightBarButtonItems = [settingButton]
     }

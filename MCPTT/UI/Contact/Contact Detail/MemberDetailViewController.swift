@@ -21,6 +21,7 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet weak var addContactButtonWidth: NSLayoutConstraint!
     //Need to change it as Model once API Integeration
     var memberListModel: MemberListCellViewModel?
+    var contactListModel: Contact?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +49,20 @@ class MemberDetailViewController: UIViewController {
                 addContactButtonWidth.constant = UIScreen.main.bounds.width/2
             }
         }
+        if contactListModel != nil {
+            nameLabel.text = contactListModel?.contactName
+            emailLabel.text = contactListModel?.contactEmail
+        } else{
+            nameLabel.text = memberListModel?.memberName
+            emailLabel.text = memberListModel?.memberEmail
+        }
         
-        nameLabel.text = memberListModel?.memberName
-        emailLabel.text = memberListModel?.memberEmail
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DELETE", style: .plain, target: self, action: #selector(deleteMember))
     }
     
+    @objc func deleteMember() {
+        
+    }
     @IBAction func addContact(_ sender: Any) {
     }
     

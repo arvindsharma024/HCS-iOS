@@ -95,6 +95,7 @@ class ConversationViewController: UIViewController, UITextViewDelegate, AVAudioR
         let callImage = UIImage(named: "call_icon")
         
         let moreButton = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(switchToUserList))
+        moreButton.tintColor = .gray
         let callButton = UIBarButtonItem(image: callImage, style: .plain, target: self, action: #selector(activatePTT))
         self.navigationItem.rightBarButtonItems = [moreButton, callButton]
         self.navigationItem.hidesBackButton = false

@@ -37,7 +37,8 @@
             "channel_name": "MCPTT_TEAM2",
             "channel_status_image_name": "IdleChannel_Image",
             "new_received_message_count": "1",
-            "missed_ptt_call_count": "7",
+            "channel_icon_image_Name": "home",
+            "missed_ptt_call_count": "",
             "ptt_call_icon_image_name": "Call_Received_Icon",
             "channel_description_status": "text message received"
         },

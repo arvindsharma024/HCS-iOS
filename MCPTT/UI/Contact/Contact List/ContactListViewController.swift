@@ -154,11 +154,13 @@ final class ContactListViewController: UIViewController, ChannelListProtocol, UI
         case 1:
             let memberDetailVc = GroupsListMemberViewController.instantiateFromStoryboard("Contact", storyboardId: "GroupsListMemberViewController")
             self.navigationController?.pushViewController(memberDetailVc, animated: true)
-        case 2:
-            let memberDetailVc = MemberDetailViewController.instantiateFromStoryboard("Contact", storyboardId: "MemberDetailViewController")
-            self.navigationController?.pushViewController(memberDetailVc, animated: true)
         default:
-            return
+            let memberDetailVc = MemberDetailViewController.instantiateFromStoryboard("Contact", storyboardId: "MemberDetailViewController")
+            let contactKey = contactSectionTitlesUpdated[indexPath.section]
+            if let contactModel = contactModelDictionary[contactKey] {
+            memberDetailVc.contactListModel = contactModel[indexPath.row]
+                self.navigationController?.pushViewController(memberDetailVc, animated: true)
+            }
         }
     }
 }
