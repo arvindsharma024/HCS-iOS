@@ -144,8 +144,8 @@ class ConversationViewController: UIViewController, UITextViewDelegate, AVAudioR
         pttButton.layer.cornerRadius = pttButton.frame.size.height/2
         pttButton.layer.borderWidth = 15
         changePttButton(color: pttState.colorCode)
-        pttStateChangeTimer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(changePTTState), userInfo: nil, repeats: true)
-        pttStateChangeTimer.fire()
+//        pttStateChangeTimer = Timer.scheduledTimer(timeInterval: 9, target: self, selector: #selector(changePTTState), userInfo: nil, repeats: true)
+//        pttStateChangeTimer.fire()
 
     }
     
