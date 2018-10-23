@@ -114,6 +114,7 @@ class DatabaseController {
     func select(table: String, whereClause : String, selectionArgs : String, orderBy: String, sortOrder: String)-> [AnyObject]{
         var result = [AnyObject]()
         
+        
         if isOpen(){
             var statement : OpaquePointer? = nil
             let checkArgs       = selectionArgs.count>0 ? selectionArgs : "*"
