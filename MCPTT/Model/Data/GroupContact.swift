@@ -54,7 +54,7 @@ class GroupContact: Contact1, Hashable {
     }
 
     func getMemberList() -> Array<PrivateContact> {
-        var memberList: Array<PrivateContact> = []
+        let memberList: Array<PrivateContact> = []
         //memberList = members.sorted(by: >)
         return memberList
     }
