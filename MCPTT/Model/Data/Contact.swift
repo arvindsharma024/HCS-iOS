@@ -15,10 +15,6 @@ protocol Contact1Protocol: AnyObject {
     var floorPriority: Int32 { get }
 }
 
-extension Contact1Protocol {
-
-}
-
 class Contact1: Contact1Protocol, Equatable {
     private var id: Int64 = -1
     private var mName: String

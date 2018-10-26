@@ -20,5 +20,13 @@ class InjectionManager {
         return injector.creatChannel(for: pttUrl)
     }
     
+    func createGroupContact(pttUrl: PttUrl) -> GroupContact {
+        return injector.createGroupContact(pttUrl: pttUrl)
+    }
+    
+    func createPrivateContact(pttUrl: PttUrl) -> PrivateContact {
+        return injector.createPrivateContact(pttUrl: pttUrl)
+    }
+    
     // TODO: Implement other method.
 }

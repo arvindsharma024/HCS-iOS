@@ -61,6 +61,10 @@
 		4DA0E7C021807A01006E5800 /* PrivateContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0E7BF21807A01006E5800 /* PrivateContact.swift */; };
 		4DA0E7C221807F16006E5800 /* GroupContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0E7C121807F16006E5800 /* GroupContact.swift */; };
 		4DA0E7C421808D24006E5800 /* AdhocContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA0E7C321808D24006E5800 /* AdhocContact.swift */; };
+		4DC5B42D2181CC2A00C4DD6B /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5B42C2181CC2A00C4DD6B /* ContactModel.swift */; };
+		4DC5B4312181E4DF00C4DD6B /* AbsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5B4302181E4DE00C4DD6B /* AbsModel.swift */; };
+		4DC5B4342181ED7E00C4DD6B /* ModelMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5B4332181ED7E00C4DD6B /* ModelMediator.swift */; };
+		4DC5B4362182DFE300C4DD6B /* ProvisionContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5B4352182DFE300C4DD6B /* ProvisionContactItem.swift */; };
 		5613CF36216CBF30006DC121 /* ChannelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5613CF35216CBF30006DC121 /* ChannelListViewModel.swift */; };
 		5613CF38216CBF48006DC121 /* ScrollPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5613CF37216CBF48006DC121 /* ScrollPager.swift */; };
 		5613CF3A216CBF71006DC121 /* channelListDemoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5613CF39216CBF71006DC121 /* channelListDemoData.json */; };
@@ -203,6 +207,10 @@
 		4DA0E7BF21807A01006E5800 /* PrivateContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateContact.swift; sourceTree = "<group>"; };
 		4DA0E7C121807F16006E5800 /* GroupContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupContact.swift; sourceTree = "<group>"; };
 		4DA0E7C321808D24006E5800 /* AdhocContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhocContact.swift; sourceTree = "<group>"; };
+		4DC5B42C2181CC2A00C4DD6B /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		4DC5B4302181E4DE00C4DD6B /* AbsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbsModel.swift; sourceTree = "<group>"; };
+		4DC5B4332181ED7E00C4DD6B /* ModelMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelMediator.swift; sourceTree = "<group>"; };
+		4DC5B4352182DFE300C4DD6B /* ProvisionContactItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionContactItem.swift; sourceTree = "<group>"; };
 		5613CF35216CBF30006DC121 /* ChannelListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewModel.swift; sourceTree = "<group>"; };
 		5613CF37216CBF48006DC121 /* ScrollPager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPager.swift; sourceTree = "<group>"; };
 		5613CF39216CBF71006DC121 /* channelListDemoData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = channelListDemoData.json; sourceTree = "<group>"; };
@@ -480,6 +488,7 @@
 		0A0B1D37216CAA69007A0FD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4DC5B4322181ED6B00C4DD6B /* mediator */,
 				4D60574B217F2FE40049EDB5 /* injection */,
 				A7A6A0182178543400EAAAD4 /* Model */,
 				4D51CE742175AAC20084CDBA /* Data */,
@@ -517,6 +526,7 @@
 		0A0B1D3E216CAA69007A0FD8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4DC5B4352182DFE300C4DD6B /* ProvisionContactItem.swift */,
 				0A0B1D3F216CAA69007A0FD8 /* RSAEncryptDecrypt.swift */,
 				0A0B1D40216CAA69007A0FD8 /* IPValidator.swift */,
 				0A0B1D41216CAA69007A0FD8 /* ModelConstants.swift */,
@@ -555,6 +565,14 @@
 				4D60574C217F2FF70049EDB5 /* Injector.swift */,
 			);
 			path = injection;
+			sourceTree = "<group>";
+		};
+		4DC5B4322181ED6B00C4DD6B /* mediator */ = {
+			isa = PBXGroup;
+			children = (
+				4DC5B4332181ED7E00C4DD6B /* ModelMediator.swift */,
+			);
+			path = mediator;
 			sourceTree = "<group>";
 		};
 		5613CF44216CC360006DC121 /* CoversationView */ = {
@@ -623,10 +641,12 @@
 		A7A6A0182178543400EAAAD4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4DC5B4302181E4DE00C4DD6B /* AbsModel.swift */,
 				4D605748217F2C0D0049EDB5 /* ChannelList.swift */,
 				4D605747217F2C0D0049EDB5 /* ChannelModel.swift */,
 				4D51CE89217DAD130084CDBA /* MessageModel.swift */,
 				4D51CE8A217DAD130084CDBA /* NotificationModel.swift */,
+				4DC5B42C2181CC2A00C4DD6B /* ContactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -796,6 +816,7 @@
 			files = (
 				0A0B1D80216CAA69007A0FD8 /* TermAndConditionViewController.swift in Sources */,
 				5FF8A446216E1CE700ADCFF1 /* GroupMembersCell.swift in Sources */,
+				4DC5B42D2181CC2A00C4DD6B /* ContactModel.swift in Sources */,
 				4DA0E7C421808D24006E5800 /* AdhocContact.swift in Sources */,
 				0A0B1D8F216CAA69007A0FD8 /* RSAEncryptDecrypt.swift in Sources */,
 				5613CF54216CC360006DC121 /* ChatMessageCell.swift in Sources */,
@@ -825,6 +846,7 @@
 				5613CF67216CC664006DC121 /* ContactsListViewModel.swift in Sources */,
 				4D51CE87217DAD0A0084CDBA /* PttUrl.swift in Sources */,
 				4DA0E7C021807A01006E5800 /* PrivateContact.swift in Sources */,
+				4DC5B4312181E4DF00C4DD6B /* AbsModel.swift in Sources */,
 				5613CF65216CC664006DC121 /* ContactListViewController.swift in Sources */,
 				0A0B1D8C216CAA69007A0FD8 /* AES256Cipher.swift in Sources */,
 				5613CF58216CC3F8006DC121 /* LandingViewController.swift in Sources */,
@@ -856,6 +878,7 @@
 				4D60574A217F2C0D0049EDB5 /* ChannelList.swift in Sources */,
 				5F8AB9732170E42A00DC9FDD /* GroupsListCell.swift in Sources */,
 				5613CF3C216CBF8E006DC121 /* ChannelListViewController.swift in Sources */,
+				4DC5B4362182DFE300C4DD6B /* ProvisionContactItem.swift in Sources */,
 				0A0B1D82216CAA69007A0FD8 /* HomeScreenViewController.swift in Sources */,
 				5FF8A44A216E1CE700ADCFF1 /* ContactHeaderCell.swift in Sources */,
 				A70FC1EA2170BF2800FEDF08 /* ChatAudioRecordCell.swift in Sources */,
@@ -875,6 +898,7 @@
 				4D51CE88217DAD0A0084CDBA /* TextMessage.swift in Sources */,
 				0A0B1D8A216CAA69007A0FD8 /* AppDelegate.swift in Sources */,
 				4D605751217F337D0049EDB5 /* InjectionManager.swift in Sources */,
+				4DC5B4342181ED7E00C4DD6B /* ModelMediator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

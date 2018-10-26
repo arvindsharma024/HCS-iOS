@@ -17,7 +17,6 @@ public class MessageBodyCache {
         messageBodyMap = CacheLRU(maxCapacity: maxCapacity)
     }
     
-    
     public func get(key: String?) -> String? {
         guard let key = key else { return nil }
         return messageBodyMap.getValue(for: key)
